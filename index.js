@@ -1,6 +1,10 @@
 var Twit = require('twit');
 
-var app = require('express')(); //express object
+var express = require('express');
+var app = express();
+
+app.use('/static', express.static(__dirname + '/static'));
+
 var http = require('http').Server(app); //serve the express
 
 var io = require('socket.io')(http); //io is input and output
@@ -44,8 +48,11 @@ var data = [];
 var lastTime = Date.now();
 var nowTime;
 var outputPoint;
+var pointLat;
+var pointLng;
 
 var stream = T.stream('statuses/filter', { track: ['#Iron Man', '#Ironman', 'Iron Man', 'Ironman', 'iron man'] });
+/*var stream = T.stream('statuses/filter', { track: ['#happy', '#Happy', 'happy', 'Happy'] });*/
 
 stream.on('tweet', function(tweet) {
     count++;
@@ -57,18 +64,22 @@ stream.on('tweet', function(tweet) {
     if (tweet.coordinates) {
         if (tweet.coordinates !== null) {
             outputPoint = { "lat": tweet.coordinates.coordinates[0], "lng": tweet.coordinates.coordinates[1] };
-            console.log(outputPoint);
+            pointLat = tweet.coordinates.coordinates[0];
+            pointLng = tweet.coordinates.coordinates[1];
         }
     } else if (tweet.user.location) {
         getCoord(tweet.user.location, function(coord){
-            console.log(JSON.stringify(coord));
-            outputPoint = JSON.stringify(coord);
+            pointLat = coord.lat;
+            pointLng = coord.lng;
+            /*console.log(coord.lat);
+            console.log(coord.lng);*/
         });
     }
     io.sockets.volatile.emit('tweet', {
         user: tweet.user.screen_name,
         text: tweet.text,
-        lal: outputPoint,
+        pointLat: pointLat,
+        pointLng: pointLng,
         sum: count,
     });
 });
