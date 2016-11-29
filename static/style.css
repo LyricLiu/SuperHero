@@ -27,10 +27,6 @@ body {
     height: 34px;
 }
 
-#globalbar:active {
-    background: url(./img/global.png);
-}
-
 #globalbar:hover {
     background: url(./img/global.png);
 }
@@ -40,10 +36,6 @@ body {
     margin-bottom: 20px;
     width: 87px;
     height: 34px;
-}
-
-#bargraph:active {
-    background: url(./img/barchart.png);
 }
 
 #bargraph:hover {
@@ -94,8 +86,7 @@ body {
 	right:405px;
 }
 
-#superman:hover,
-#superman:active{
+#superman:hover{
 	background: url(./img/superman2.png);
 }
 
@@ -109,8 +100,7 @@ body {
 	right:270px;
 }
 
-#spiderman:hover,
-#spiderman:active{
+#spiderman:hover{
 	background: url(./img/spiderman2.png);
 }
 
@@ -124,8 +114,7 @@ body {
 	right:135px;
 }
 
-#blackwidow:hover,
-#blackwidow:active{
+#blackwidow:hover{
 	background: url(./img/blackwidow2.png);
 }
 
@@ -139,8 +128,7 @@ body {
 	right:0px;
 }
 
-#captainamerica:hover,
-#captainamerica:active{
+#captainamerica:hover{
 	background: url(./img/captainamerica2.png);
 }
 
@@ -154,8 +142,7 @@ body {
 	right:405px;
 }
 
-#batman:hover,
-#batman:active{
+#batman:hover{
 	background: url(./img/batman2.png);
 }
 
@@ -169,8 +156,7 @@ body {
 	right:270px;
 }
 
-#wonderwoman:hover,
-#wonderwoman:active{
+#wonderwoman:hover{
 	background: url(./img/wonderwoman2.png);
 }
 
@@ -184,8 +170,7 @@ body {
 	right:135px;
 }
 
-#thor:hover,
-#thor:active{
+#thor:hover{
 	background: url(./img/thor2.png);
 }
 
@@ -199,8 +184,7 @@ body {
 	right:0px;
 }
 
-#ironman:hover,
-#ironman:active{
+#ironman:hover{
 	background: url(./img/ironman2.png);
 }
 
