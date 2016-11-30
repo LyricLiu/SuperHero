@@ -89,9 +89,9 @@
     supermanG.addEventListener("click", function() {
         socket.on('tweet1', function(data) {
             planet.plugins.pings.add(data.pointLng1, data.pointLat1, { color: '#319fd0', ttl: 2000, angle: 5 });
-            if(data.user1){
-                tweetList.prepend('<li>' + '<img src="./static/img/dot1.png">'+ data.user1 + ': ' + data.text1 + '</li>');
-            }
+            tweetList.prepend('<li>' + '<img src="./static/img/dot1.png">'+ data.user1 + ': ' + data.text1 + '</li>');
+            height = parseInt(data.sum1)/1.6;
+            $("#hero1").height(height);
         });
         supermanG.style.backgroundImage = "url(./static/img/superman2.png)";
     }, false);
@@ -100,6 +100,8 @@
         socket.on('tweet2', function(data) {
             planet.plugins.pings.add(data.pointLng2, data.pointLat2, { color: '#c03f59', ttl: 2000, angle: 5 });
             tweetList.prepend('<li>' + '<img src="./static/img/dot2.png">' + data.user2 + ': ' + data.text2 + '</li>');
+            height = parseInt(data.sum2)/1.6;
+            $("#hero2").height(height);
         });
         spidermanG.style.backgroundImage = "url(./static/img/spiderman2.png)";
     }, false);
@@ -108,6 +110,8 @@
         socket.on('tweet3', function(data) {
             planet.plugins.pings.add(data.pointLng3, data.pointLat3, { color: '#080404', ttl: 2000, angle: 5 });
             tweetList.prepend('<li>' + '<img src="./static/img/dot3.png">' + data.user3 + ': ' + data.text3 + '</li>');
+            height = parseInt(data.sum3)/1.6;
+            $("#hero3").height(height);
         });
         blackwidowG.style.backgroundImage = "url(./static/img/blackwidow2.png)";
     }, false);
@@ -116,6 +120,8 @@
         socket.on('tweet4', function(data) {
             planet.plugins.pings.add(data.pointLng4, data.pointLat4, { color: '#0c6c8e', ttl: 2000, angle: 5 });
             tweetList.prepend('<li>' + '<img src="./static/img/dot4.png">' + data.user4 + ': ' + data.text4 + '</li>');
+            height = parseInt(data.sum4)/1.6;
+            $("#hero4").height(height);
         });
         captainamericaG.style.backgroundImage = "url(./static/img/captainamerica2.png)";
     }, false);
@@ -124,6 +130,8 @@
         socket.on('tweet5', function(data) {
             planet.plugins.pings.add(data.pointLng5, data.pointLat5, { color: '#484b4f', ttl: 2000, angle: 5 });
             tweetList.prepend('<li>' + '<img src="./static/img/dot5.png">' + data.user5 + ': ' + data.text5 + '</li>');
+            height = parseInt(data.sum5)/1.6;
+            $("#hero5").height(height);
         });
         batmanG.style.backgroundImage = "url(./static/img/batman2.png)";
     }, false);
@@ -132,6 +140,8 @@
         socket.on('tweet6', function(data) {
             planet.plugins.pings.add(data.pointLng6, data.pointLat6, { color: '#ecb67f', ttl: 2000, angle: 5 });
             tweetList.prepend('<li>' + '<img src="./static/img/dot6.png">' + data.user6 + ': ' + data.text6 + '</li>');
+            height = parseInt(data.sum1)/1.6;
+            $("#hero6").height(height);
         });
         wonderwomanG.style.backgroundImage = "url(./static/img/wonderwoman2.png)";
     }, false);
@@ -140,6 +150,8 @@
         socket.on('tweet7', function(data) {
             planet.plugins.pings.add(data.pointLng7, data.pointLat7, { color: '#888b91', ttl: 2000, angle: 5 });
             tweetList.prepend('<li>' + '<img src="./static/img/dot7.png">' + data.user7 + ': ' + data.text7 + '</li>');
+            height = parseInt(data.sum7)/1.6;
+            $("#hero7").height(height);
         });
         thorG.style.backgroundImage = "url(./static/img/thor2.png)";
     }, false);
@@ -148,12 +160,20 @@
         socket.on('tweet8', function(data) {
             planet.plugins.pings.add(data.pointLng8, data.pointLat8, { color: '#e0923e', ttl: 2000, angle: 5 });
             tweetList.prepend('<li>' + '<img src="./static/img/dot8.png">' + data.user8 + ': ' + data.text8 + '</li>');
+            height = parseInt(data.sum8)/1.6;
+            $("#hero8").height(height);
         });
         ironmanG.style.backgroundImage = "url(./static/img/ironman2.png)";
     }, false);
 
     //BarGraph
 
+/*
+    var svg = d3.select('#bar-area').append('svg');
+    svg.attr('width', 900).attr('height', 500);
+    var y = d3.scale.linear().domain([0,100]).range([300,0]);
+    var x = d3.scale.linear().domain([0,8]).range([800,0]);
+    svg.append('rect').attr('fill','red').attr('x',x(1)).attr('y',y(20));
 
 
     /*var tweetList = $('ul.tweets');
