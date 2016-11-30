@@ -47,6 +47,7 @@
 
     globalbar.addEventListener("click", function() {
         show('global');
+        show('heroCanvas');
         hide('bargraph-module');
         hide('stream-module');
         globalbar.style.backgroundImage = "url(./static/img/global.png)";
@@ -64,7 +65,8 @@
     }, false);
 
     stream.addEventListener("click", function() {
-        hide('global');
+        show('global');
+        hide('heroCanvas');
         hide('bargraph-module');
         show('stream-module');
         globalbar.style.backgroundImage = "url(./static/img/global0.png)";
@@ -73,6 +75,7 @@
     }, false);
 
     //Global page
+    var tweetList = $('ul.tweets');
 
     var supermanG = document.getElementById('superman');
     var spidermanG = document.getElementById('spiderman');
@@ -84,72 +87,78 @@
     var ironmanG = document.getElementById('ironman');
 
     supermanG.addEventListener("click", function() {
-        socket.on('tweet', function(data) {
+        socket.on('tweet1', function(data) {
             planet.plugins.pings.add(data.pointLng1, data.pointLat1, { color: '#319fd0', ttl: 2000, angle: 5 });
+            if(data.user1){
+                tweetList.prepend('<li>' + '<img src="./static/img/dot1.png">'+ data.user1 + ': ' + data.text1 + '</li>');
+            }
         });
         supermanG.style.backgroundImage = "url(./static/img/superman2.png)";
     }, false);
 
     spidermanG.addEventListener("click", function() {
-        socket.on('tweet', function(data) {
+        socket.on('tweet2', function(data) {
             planet.plugins.pings.add(data.pointLng2, data.pointLat2, { color: '#c03f59', ttl: 2000, angle: 5 });
+            tweetList.prepend('<li>' + '<img src="./static/img/dot2.png">' + data.user2 + ': ' + data.text2 + '</li>');
         });
         spidermanG.style.backgroundImage = "url(./static/img/spiderman2.png)";
     }, false);
 
     blackwidowG.addEventListener("click", function() {
-        socket.on('tweet', function(data) {
+        socket.on('tweet3', function(data) {
             planet.plugins.pings.add(data.pointLng3, data.pointLat3, { color: '#080404', ttl: 2000, angle: 5 });
+            tweetList.prepend('<li>' + '<img src="./static/img/dot3.png">' + data.user3 + ': ' + data.text3 + '</li>');
         });
         blackwidowG.style.backgroundImage = "url(./static/img/blackwidow2.png)";
     }, false);
 
     captainamericaG.addEventListener("click", function() {
-        socket.on('tweet', function(data) {
+        socket.on('tweet4', function(data) {
             planet.plugins.pings.add(data.pointLng4, data.pointLat4, { color: '#0c6c8e', ttl: 2000, angle: 5 });
+            tweetList.prepend('<li>' + '<img src="./static/img/dot4.png">' + data.user4 + ': ' + data.text4 + '</li>');
         });
         captainamericaG.style.backgroundImage = "url(./static/img/captainamerica2.png)";
     }, false);
 
     batmanG.addEventListener("click", function() {
-        socket.on('tweet', function(data) {
+        socket.on('tweet5', function(data) {
             planet.plugins.pings.add(data.pointLng5, data.pointLat5, { color: '#484b4f', ttl: 2000, angle: 5 });
+            tweetList.prepend('<li>' + '<img src="./static/img/dot5.png">' + data.user5 + ': ' + data.text5 + '</li>');
         });
         batmanG.style.backgroundImage = "url(./static/img/batman2.png)";
     }, false);
 
     wonderwomanG.addEventListener("click", function() {
-        socket.on('tweet', function(data) {
+        socket.on('tweet6', function(data) {
             planet.plugins.pings.add(data.pointLng6, data.pointLat6, { color: '#ecb67f', ttl: 2000, angle: 5 });
+            tweetList.prepend('<li>' + '<img src="./static/img/dot6.png">' + data.user6 + ': ' + data.text6 + '</li>');
         });
         wonderwomanG.style.backgroundImage = "url(./static/img/wonderwoman2.png)";
     }, false);
 
     thorG.addEventListener("click", function() {
-        socket.on('tweet', function(data) {
+        socket.on('tweet7', function(data) {
             planet.plugins.pings.add(data.pointLng7, data.pointLat7, { color: '#888b91', ttl: 2000, angle: 5 });
+            tweetList.prepend('<li>' + '<img src="./static/img/dot7.png">' + data.user7 + ': ' + data.text7 + '</li>');
         });
         thorG.style.backgroundImage = "url(./static/img/thor2.png)";
     }, false);
 
     ironmanG.addEventListener("click", function() {
-        socket.on('tweet', function(data) {
+        socket.on('tweet8', function(data) {
             planet.plugins.pings.add(data.pointLng8, data.pointLat8, { color: '#e0923e', ttl: 2000, angle: 5 });
+            tweetList.prepend('<li>' + '<img src="./static/img/dot8.png">' + data.user8 + ': ' + data.text8 + '</li>');
         });
         ironmanG.style.backgroundImage = "url(./static/img/ironman2.png)";
     }, false);
 
+    //BarGraph
+
+
+
     /*var tweetList = $('ul.tweets');
     socket.on('tweet', function(data) {
         tweetList.prepend('<li>' + data.user + ': ' + data.pointLng + data.pointLat + '</li>');
-        supermanG.addEventListener("click", function(){planet.plugins.pings.add(data.pointLng1, data.pointLat1, { color: '#319fd0', ttl: 2000, angle: 5 });}, false);
-        spidermanG.addEventListener('click', function() { planet.plugins.pings.add(data.pointLng2, data.pointLat2, { color: '#c03f59', ttl: 2000, angle: 5 }); }, false);
-        blackwidowG.addEventListener('click', function() { planet.plugins.pings.add(data.pointLng3, data.pointLat3, { color: '#080404', ttl: 2000, angle: 5 }); }, false);
-        captainamericaG.addEventListener('click', function() { planet.plugins.pings.add(data.pointLng4, data.pointLat4, { color: '#0c6c8e', ttl: 2000, angle: 5 }); }, false);
-        batmanG.addEventListener('click', function() { planet.plugins.pings.add(data.pointLng5, data.pointLat5, { color: '#484b4f', ttl: 2000, angle: 5 }); }, false);
-        wonderwomanG.addEventListener('click', function() { planet.plugins.pings.add(data.pointLng6, data.pointLat6, { color: '#ecb67f', ttl: 2000, angle: 5 }); }, false);
-        thorG.addEventListener('click', function() { planet.plugins.pings.add(data.pointLng7, data.pointLat7, { color: '#888b91', ttl: 2000, angle: 5 }); }, false);
-        ironmanG.addEventListener('click', function() { planet.plugins.pings.add(data.pointLng8, data.pointLat8, { color: '#e0923e', ttl: 2000, angle: 5 }); }, false);
     });*/
 
     // Create a color scale for the various earthquake magnitudes; the

@@ -21,7 +21,7 @@ body {
 }
 
 #globalbar {
-    background: url(./img/global0.png);
+    background: url(./img/global.png);
     margin-bottom: 20px;
     width: 87px;
     height: 34px;
@@ -59,8 +59,9 @@ body {
 
 
 #global-icon{
-	position: absolute;
-	top:180px;
+	position: fixed;
+	z-index: 999;
+	top:170px;
 	left:800px;
 	height:450px;
 	width:525px;
@@ -68,9 +69,9 @@ body {
 
 #head1{
 	background: url(./img/head1.png);
-	position: absolute;
+	position: fixed;
 	left:800px;
-	top:70px;
+	top:60px;
 	width: 447px;
 	height: 133px;
 }
@@ -192,4 +193,104 @@ body {
 	position: relative;
 	margin-right:20px;
 }
+
+/****************Stream*****************/
+#stream-aside{
+	float: right;
+	right: 0;
+	height: 100%;
+	width: 362px;
+}
+
+#stream-head{
+	background: url(./img/head3.png);
+	margin-top:60px;
+	width:268px;
+	height:80px;
+}
+
+#stream-icon{
+	margin-top: 20px;
+}
+
+#stream-icon div{
+	margin: 10px;
+	width:106px;
+	height:106px;
+	float:left;
+	position: relative;
+}
+
+#super3{
+	background: url(./img/super3-0.png);
+}
+
+#spider3{
+	background: url(./img/spider3-0.png);
+}
+
+#black3{
+	background: url(./img/black3-0.png);
+}
+
+#captain3{
+	background: url(./img/captain3-0.png);
+}
+
+#bat3{
+	background: url(./img/bat3-0.png);
+}
+
+#wonder3{
+	background: url(./img/wonder3-0.png);
+}
+
+#thor3{
+	background: url(./img/thor3-0.png);
+}
+
+#iron3{
+	background: url(./img/iron3-0.png);
+}
+
+.tweets li{
+	padding:3px;
+	background-color: #262b41;
+	color: #bbb8c4;
+	font-family: calibri;
+	margin-left:20px;
+	list-style: none;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+
+li img{
+  margin-right:20px;
+  float:left;
+  position: absolute;
+  left:-40px;
+ }
+
+.dot{
+	width: 15px;
+	height: 15px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#stream-main{
+	width: 570px;
+	margin-left:150px;
+	margin-top:30px;
+	position: relative;
+}
+
+#stream-module{
+	display: none;
+}
+
+
 
