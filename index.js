@@ -43,7 +43,14 @@ var getCoord = function(locationName, callback) {
     });
 }
 
-var count = 0;
+var count1 = 0;
+var count2 = 0;
+var count3 = 0;
+var count4 = 0;
+var count5 = 0;
+var count6 = 0;
+var count7 = 0;
+var count8 = 0;
 var data = [];
 var lastTime = Date.now();
 var nowTime;
@@ -61,10 +68,10 @@ var stream5 = T.stream('statuses/filter', { track: ['#Bat Man', '#Batman', '#Bat
 var stream7 = T.stream('statuses/filter', { track: ['#Thor', '#thor', '#THOR', 'Thor', 'thor', 'THOR'] });
 
 stream1.on('tweet', function(tweet) {
-    count++;
+    count1++;
     nowTime = Date.now();
     if (nowTime - lastTime > 1000) {
-        console.log(count);
+        console.log(count1);
         lastTime = nowTime;
     }
     if (tweet.coordinates) {
@@ -77,7 +84,7 @@ stream1.on('tweet', function(tweet) {
                 text1: tweet.text,
                 pointLat1: pointLat,
                 pointLng1: pointLng,
-                sum1: count,
+                sum1: count1,
             });
         }
     } else if (tweet.user.location) {
@@ -89,17 +96,17 @@ stream1.on('tweet', function(tweet) {
                 text1: tweet.text,
                 pointLat1: pointLat,
                 pointLng1: pointLng,
-                sum1: count,
+                sum1: count1,
             });
         });
     }
 });
 
 stream2.on('tweet', function(tweet) {
-    count++;
+    count2++;
     nowTime = Date.now();
     if (nowTime - lastTime > 1000) {
-        console.log(count);
+        console.log(count2);
         lastTime = nowTime;
     }
     if (tweet.coordinates) {
@@ -112,7 +119,7 @@ stream2.on('tweet', function(tweet) {
                 text2: tweet.text,
                 pointLat2: pointLat,
                 pointLng2: pointLng,
-                sum2: count,
+                sum2: count2,
             });
         }
     } else if (tweet.user.location) {
@@ -124,17 +131,17 @@ stream2.on('tweet', function(tweet) {
                 text2: tweet.text,
                 pointLat2: pointLat,
                 pointLng2: pointLng,
-                sum2: count,
+                sum2: count2,
             });
         });
     }
 });
 
 stream3.on('tweet', function(tweet) {
-    count++;
+    count3++;
     nowTime = Date.now();
     if (nowTime - lastTime > 1000) {
-        console.log(count);
+        console.log(count3);
         lastTime = nowTime;
     }
     if (tweet.coordinates) {
@@ -147,7 +154,7 @@ stream3.on('tweet', function(tweet) {
                 text3: tweet.text,
                 pointLat3: pointLat,
                 pointLng3: pointLng,
-                sum3: count,
+                sum3: count3,
             });
         }
     } else if (tweet.user.location) {
@@ -159,17 +166,17 @@ stream3.on('tweet', function(tweet) {
                 text3: tweet.text,
                 pointLat3: pointLat,
                 pointLng3: pointLng,
-                sum3: count,
+                sum3: count3,
             });
         });
     }
 });
 
 stream4.on('tweet', function(tweet) {
-    count++;
+    count4++;
     nowTime = Date.now();
     if (nowTime - lastTime > 1000) {
-        console.log(count);
+        console.log(count4);
         lastTime = nowTime;
     }
     if (tweet.coordinates) {
@@ -182,7 +189,7 @@ stream4.on('tweet', function(tweet) {
                 text4: tweet.text,
                 pointLat4: pointLat,
                 pointLng4: pointLng,
-                sum4: count,
+                sum4: count4,
             });
         }
     } else if (tweet.user.location) {
@@ -194,17 +201,17 @@ stream4.on('tweet', function(tweet) {
                 text4: tweet.text,
                 pointLat4: pointLat,
                 pointLng4: pointLng,
-                sum4: count,
+                sum4: count4,
             });
         });
     }
 });
 
 stream5.on('tweet', function(tweet) {
-    count++;
+    count5++;
     nowTime = Date.now();
     if (nowTime - lastTime > 1000) {
-        console.log(count);
+        console.log(count5);
         lastTime = nowTime;
     }
     if (tweet.coordinates) {
@@ -217,7 +224,7 @@ stream5.on('tweet', function(tweet) {
                 text5: tweet.text,
                 pointLat5: pointLat,
                 pointLng5: pointLng,
-                sum5: count,
+                sum5: count5,
             });
         }
     } else if (tweet.user.location) {
@@ -229,17 +236,17 @@ stream5.on('tweet', function(tweet) {
                 text5: tweet.text,
                 pointLat5: pointLat,
                 pointLng5: pointLng,
-                sum5: count,
+                sum5: count5,
             });
         });
     }
 });
 
 stream6.on('tweet', function(tweet) {
-    count++;
+    count6++;
     nowTime = Date.now();
     if (nowTime - lastTime > 1000) {
-        console.log(count);
+        console.log(count6);
         lastTime = nowTime;
     }
     if (tweet.coordinates) {
@@ -252,7 +259,7 @@ stream6.on('tweet', function(tweet) {
                 text6: tweet.text,
                 pointLat6: pointLat,
                 pointLng6: pointLng,
-                sum6: count,
+                sum6: count6,
             });
         }
     } else if (tweet.user.location) {
@@ -264,17 +271,17 @@ stream6.on('tweet', function(tweet) {
                 text6: tweet.text,
                 pointLat6: pointLat,
                 pointLng6: pointLng,
-                sum6: count,
+                sum6: count6,
             });
         });
     }
 });
 
 stream7.on('tweet', function(tweet) {
-    count++;
+    count7++;
     nowTime = Date.now();
     if (nowTime - lastTime > 1000) {
-        console.log(count);
+        console.log(count7);
         lastTime = nowTime;
     }
     if (tweet.coordinates) {
@@ -287,7 +294,7 @@ stream7.on('tweet', function(tweet) {
                 text7: tweet.text,
                 pointLat7: pointLat,
                 pointLng7: pointLng,
-                sum7: count,
+                sum7: count7,
             });
         }
     } else if (tweet.user.location) {
@@ -299,17 +306,17 @@ stream7.on('tweet', function(tweet) {
                 text7: tweet.text,
                 pointLat7: pointLat,
                 pointLng7: pointLng,
-                sum7: count,
+                sum7: count7,
             });
         });
     }
 });
 
 stream8.on('tweet', function(tweet) {
-    count++;
+    count8++;
     nowTime = Date.now();
     if (nowTime - lastTime > 1000) {
-        console.log(count);
+        console.log(count8);
         lastTime = nowTime;
     }
     if (tweet.coordinates) {
@@ -322,7 +329,7 @@ stream8.on('tweet', function(tweet) {
                 text8: tweet.text,
                 pointLat8: pointLat,
                 pointLng8: pointLng,
-                sum8: count,
+                sum8: count8,
             });
         }
     } else if (tweet.user.location) {
@@ -334,7 +341,7 @@ stream8.on('tweet', function(tweet) {
                 text8: tweet.text,
                 pointLat8: pointLat,
                 pointLng8: pointLng,
-                sum8: count,
+                sum8: count8,
             });
         });
     }
