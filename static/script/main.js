@@ -85,101 +85,219 @@
     var wonderwomanG = document.getElementById('wonderwoman');
     var thorG = document.getElementById('thor');
     var ironmanG = document.getElementById('ironman');
+    var sum1 = 0;
+    var sum2 = 0;
+    var sum3 = 0;
+    var sum4 = 0;
+    var sum5 = 0;
+    var sum6 = 0;
+    var sum7 = 0;
+    var sum8 = 0;
+    var Lng1;
+    var Lng2;
+    var Lng3;
+    var Lng4;
+    var Lng5;
+    var Lng6;
+    var Lng7;
+    var Lng8;
+    var Lat1;
+    var Lat2;
+    var Lat3;
+    var Lat4;
+    var Lat5;
+    var Lat6;
+    var Lat7;
+    var Lat8;
+    var user1 = false;
+    var user2 = false;
+    var user3 = false;
+    var user4 = false;
+    var user5 = false;
+    var user6 = false;
+    var user7 = false;
+    var user8 = false;
+    var text1;
+    var text2;
+    var text3;
+    var text4;
+    var text5;
+    var text6;
+    var text7;
+    var text8;
+
+
+    socket.on('tweet', function(data) {
+        var t = data.text;
+        if (t.indexOf("Super") != -1 || t.indexOf("super") != -1 || t.indexOf("SUPER") != -1) {
+            if(user1 == true){
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#319fd0', ttl: 2000, angle: 5 });
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#319fd0', ttl: 2000000, angle: 1 });
+                tweetList.prepend('<li>' + '<img src="./static/img/dot1.png">' + data.user + ': ' + data.text + '</li>');
+                height = parseInt(sum1) / 0.4;
+                $("#hero1").height(height);
+                /*height1 = parseInt(sum1) / 0.8 + 52;
+                $("#heroT1").style.bottom = "'" + height1 + "px'";
+                if(height1 > 200){
+                    $("#heroT1").style.display = "block";
+                }*/
+            }
+            sum1++;
+        } else if (t.indexOf("Spider") != -1 || t.indexOf("spider") != -1 || t.indexOf("SPIDER") != -1) {
+            if(user2 == true){
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#c03f59', ttl: 2000, angle: 5 });
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#c03f59', ttl: 2000000, angle: 1 });
+                tweetList.prepend('<li>' + '<img src="./static/img/dot2.png">' + data.user + ': ' + data.text + '</li>');
+                height = parseInt(sum2) / 0.4;
+                $("#hero2").height(height);
+                /*height1 = parseInt(sum2) / 0.8 + 47;
+                $("#heroT2").style.bottom = "'" + height2 + "px'";
+                if(height1 > 200){
+                    $("#heroT2").style.display = "block";
+                }*/
+            }
+            sum2++;
+        } else if (t.indexOf("Black") != -1 || t.indexOf("black") != -1) {
+            if(user3 == true){
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#080404', ttl: 2000, angle: 5 });
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#080404', ttl: 2000000, angle: 1 });
+                tweetList.prepend('<li>' + '<img src="./static/img/dot3.png">' + data.user + ': ' + data.text + '</li>');
+                height = parseInt(sum3) / 0.4;
+                $("#hero3").height(height);
+                /*height1 = parseInt(sum3) / 0.8 + 52;
+                $("#heroT3").style.bottom = "'" + height3 + "px'";
+                if(height1 > 200){
+                    $("#heroT3").style.display = "block";
+                }*/
+            }
+            sum3++;
+        } else if (t.indexOf("Captain") != -1 || t.indexOf("captain") != -1) {
+            if(user4 == true){
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#0c6c8e', ttl: 2000, angle: 5 });
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#0c6c8e', ttl: 2000000, angle: 1 });
+                tweetList.prepend('<li>' + '<img src="./static/img/dot4.png">' + data.user + ': ' + data.text + '</li>');
+                height = parseInt(sum4) / 0.4;
+                $("#hero4").height(height);
+                /*height1 = parseInt(sum4) / 0.8 + 48;
+                $("#heroT4").style.bottom= "'" + height4 + "px'";
+                if(height1 > 200){
+                    $("#heroT4").style.display = "block";
+                }*/
+            }
+            sum4++;
+        } else if (t.indexOf("Bat") != -1 || t.indexOf("bat") != -1) {
+            if(user5 == true){
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#484b4f', ttl: 2000, angle: 5 });
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#484b4f', ttl: 2000000, angle: 1 });
+                tweetList.prepend('<li>' + '<img src="./static/img/dot5.png">' + data.user + ': ' + data.text + '</li>');
+                height = parseInt(sum5) / 0.4;
+                $("#hero5").height(height);
+                /*height1 = parseInt(sum5) / 0.8 + 50;
+                $("#heroT5").style.bottom= "'" + height5 + "px'";
+                if(height1 > 200){
+                    $("#heroT5").style.display = "block";
+                }*/
+            }
+            sum5++;
+        } else if (t.indexOf("Wonder") != -1 || t.indexOf("wonder") != -1) {
+            if(user6 == true){
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#ecb67f', ttl: 2000, angle: 5 });
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#ecb67f', ttl: 2000000, angle: 1 });
+                tweetList.prepend('<li>' + '<img src="./static/img/dot6.png">' + data.user + ': ' + data.text + '</li>');
+                height = parseInt(sum6) / 0.4;
+                $("#hero6").height(height);
+                /*height1 = parseInt(sum6) / 0.8 + 52;
+                $("#heroT6").style.bottom= "'" + height6 + "px'";
+                if(height1 > 200){
+                    $("#heroT6").style.display = "block";
+                }*/
+            }
+            sum6++;
+        } else if (t.indexOf("Thor") != -1 || t.indexOf("thor") != -1) {
+           if(user7 == true){
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#888b91', ttl: 2000, angle: 5 });
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#888b91', ttl: 2000000, angle: 1 });
+                tweetList.prepend('<li>' + '<img src="./static/img/dot7.png">' + data.user + ': ' + data.text + '</li>');
+                height = parseInt(sum7) / 0.4;
+                $("#hero7").height(height);
+                /*height1 = parseInt(sum7) / 0.8 + 45;
+                $("#heroT7").style.bottom= "'" + height7 + "px'";
+                if(height1 > 200){
+                    $("#heroT7").style.display = "block";
+                }*/
+            }
+            sum7++;
+        } else if (t.indexOf("Iron") != -1 || t.indexOf("iron") != -1) {
+            if(user8 == true){
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#e0923e', ttl: 2000, angle: 5 });
+                planet.plugins.pings.add(data.pointLng, data.pointLat, { color: '#e0923e', ttl: 2000000, angle: 1 });
+                tweetList.prepend('<li>' + '<img src="./static/img/dot8.png">' + data.user + ': ' + data.text + '</li>');
+                height = parseInt(sum8) / 0.4;
+                $("#hero8").height(height);
+                /*height1 = parseInt(sum8) / 0.8 + 49;
+                $("#heroT8").style.bottom= "'" + height8 + "px'";
+                if(height1 > 200){
+                    $("#heroT8").style.display = "block";
+                }*/
+            }
+            sum8++;
+        }
+    });
 
     supermanG.addEventListener("click", function() {
-        socket.on('tweet1', function(data) {
-            planet.plugins.pings.add(data.pointLng1, data.pointLat1, { color: '#319fd0', ttl: 2000, angle: 5 });
-            tweetList.prepend('<li>' + '<img src="./static/img/dot1.png">'+ data.user1 + ': ' + data.text1 + '</li>');
-            height = parseInt(data.sum1)/1.6;
-            $("#hero1").height(height);
-        });
+        user1 = true;
         supermanG.style.backgroundImage = "url(./static/img/superman2.png)";
     }, false);
 
     spidermanG.addEventListener("click", function() {
-        socket.on('tweet2', function(data) {
-            planet.plugins.pings.add(data.pointLng2, data.pointLat2, { color: '#c03f59', ttl: 2000, angle: 5 });
-            tweetList.prepend('<li>' + '<img src="./static/img/dot2.png">' + data.user2 + ': ' + data.text2 + '</li>');
-            height = parseInt(data.sum2)/1.6;
-            $("#hero2").height(height);
-        });
+        user2 = true;
         spidermanG.style.backgroundImage = "url(./static/img/spiderman2.png)";
     }, false);
 
     blackwidowG.addEventListener("click", function() {
-        socket.on('tweet3', function(data) {
-            planet.plugins.pings.add(data.pointLng3, data.pointLat3, { color: '#080404', ttl: 2000, angle: 5 });
-            tweetList.prepend('<li>' + '<img src="./static/img/dot3.png">' + data.user3 + ': ' + data.text3 + '</li>');
-            height = parseInt(data.sum3)/1.6;
-            $("#hero3").height(height);
-        });
+        user3 = true;
         blackwidowG.style.backgroundImage = "url(./static/img/blackwidow2.png)";
     }, false);
 
     captainamericaG.addEventListener("click", function() {
-        socket.on('tweet4', function(data) {
-            planet.plugins.pings.add(data.pointLng4, data.pointLat4, { color: '#0c6c8e', ttl: 2000, angle: 5 });
-            tweetList.prepend('<li>' + '<img src="./static/img/dot4.png">' + data.user4 + ': ' + data.text4 + '</li>');
-            height = parseInt(data.sum4)/1.6;
-            $("#hero4").height(height);
-        });
+        user4 = true;
         captainamericaG.style.backgroundImage = "url(./static/img/captainamerica2.png)";
     }, false);
 
     batmanG.addEventListener("click", function() {
-        socket.on('tweet5', function(data) {
-            planet.plugins.pings.add(data.pointLng5, data.pointLat5, { color: '#484b4f', ttl: 2000, angle: 5 });
-            tweetList.prepend('<li>' + '<img src="./static/img/dot5.png">' + data.user5 + ': ' + data.text5 + '</li>');
-            height = parseInt(data.sum5)/1.6;
-            $("#hero5").height(height);
-        });
+        user5 = true;
         batmanG.style.backgroundImage = "url(./static/img/batman2.png)";
     }, false);
 
     wonderwomanG.addEventListener("click", function() {
-        socket.on('tweet6', function(data) {
-            planet.plugins.pings.add(data.pointLng6, data.pointLat6, { color: '#ecb67f', ttl: 2000, angle: 5 });
-            tweetList.prepend('<li>' + '<img src="./static/img/dot6.png">' + data.user6 + ': ' + data.text6 + '</li>');
-            height = parseInt(data.sum1)/1.6;
-            $("#hero6").height(height);
-        });
+        user6 = true;
         wonderwomanG.style.backgroundImage = "url(./static/img/wonderwoman2.png)";
     }, false);
 
     thorG.addEventListener("click", function() {
-        socket.on('tweet7', function(data) {
-            planet.plugins.pings.add(data.pointLng7, data.pointLat7, { color: '#888b91', ttl: 2000, angle: 5 });
-            tweetList.prepend('<li>' + '<img src="./static/img/dot7.png">' + data.user7 + ': ' + data.text7 + '</li>');
-            height = parseInt(data.sum7)/1.6;
-            $("#hero7").height(height);
-        });
+        user7 = true;
         thorG.style.backgroundImage = "url(./static/img/thor2.png)";
     }, false);
 
     ironmanG.addEventListener("click", function() {
-        socket.on('tweet8', function(data) {
-            planet.plugins.pings.add(data.pointLng8, data.pointLat8, { color: '#e0923e', ttl: 2000, angle: 5 });
-            tweetList.prepend('<li>' + '<img src="./static/img/dot8.png">' + data.user8 + ': ' + data.text8 + '</li>');
-            height = parseInt(data.sum8)/1.6;
-            $("#hero8").height(height);
-        });
+        user8 = true;
         ironmanG.style.backgroundImage = "url(./static/img/ironman2.png)";
     }, false);
 
     //BarGraph
 
-/*
-    var svg = d3.select('#bar-area').append('svg');
-    svg.attr('width', 900).attr('height', 500);
-    var y = d3.scale.linear().domain([0,100]).range([300,0]);
-    var x = d3.scale.linear().domain([0,8]).range([800,0]);
-    svg.append('rect').attr('fill','red').attr('x',x(1)).attr('y',y(20));
+    /*
+        var svg = d3.select('#bar-area').append('svg');
+        svg.attr('width', 900).attr('height', 500);
+        var y = d3.scale.linear().domain([0,100]).range([300,0]);
+        var x = d3.scale.linear().domain([0,8]).range([800,0]);
+        svg.append('rect').attr('fill','red').attr('x',x(1)).attr('y',y(20));
 
 
-    /*var tweetList = $('ul.tweets');
-    socket.on('tweet', function(data) {
-        tweetList.prepend('<li>' + data.user + ': ' + data.pointLng + data.pointLat + '</li>');
-    });*/
+        /*var tweetList = $('ul.tweets');
+        socket.on('tweet', function(data) {
+            tweetList.prepend('<li>' + data.user + ': ' + data.pointLng + data.pointLat + '</li>');
+        });*/
 
     // Create a color scale for the various earthquake magnitudes; the
     // minimum magnitude in our data set is 2.5.

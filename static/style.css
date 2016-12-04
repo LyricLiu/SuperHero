@@ -391,3 +391,90 @@ li img{
     top:50px;
 }
 
+#heroT1{
+	background: url(./img/superman.png);
+	width:84px;
+	height:77px;
+	position: absolute;
+	left:235px;
+	bottom:52px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT2{
+	background: url(./img/spiderman.png);
+	width:80px;
+	height:86px;
+	position: absolute;
+	left:370px;
+	bottom:47px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT3{
+	background: url(./img/blackwidow.png);
+	width:94px;
+	height:78px;
+	position: absolute;
+	left:498px;
+	bottom:52px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT4{
+	background: url(./img/captainamerica.png);
+	width:84px;
+	height:85px;
+	position: absolute;
+	left:633px;
+	bottom:48px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT5{
+	background: url(./img/batman.png);
+	width:89px;
+	height:80px;
+	position: absolute;
+	left:761px;
+	bottom:50px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT6{
+	background: url(./img/wonderwoman.png);
+	width:80px;
+	height:76px;
+	position: absolute;
+	left:885px;
+	bottom:52px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT7{
+	background: url(./img/thron.png);
+	width:79px;
+	height:91px;
+	position: absolute;
+	left:1029px;
+	bottom:45px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT8{
+	background: url(./img/ironman.png);
+	width:62px;
+	height:82px;
+	position: absolute;
+	left:1170px;
+	bottom:49px;
+	z-index:9999;
+	display: none;
+}
