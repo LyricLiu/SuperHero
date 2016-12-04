@@ -1,0 +1,528 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #30364e;
+}
+
+
+#loadingbg {
+	background: url(./img/headbg.png);
+    position: relative;
+    width:731px;
+    height:306px;
+    left: calc(50% - 400px);
+    top: 180px;
+}
+
+#loadingstar {
+	background: url(./img/star.png);
+    position: absolute;
+    width:78px;
+    height:74px;
+    right:-35px;
+    top: 10px;
+    animation: rotate 4s infinite linear;
+}
+
+#loadingaround {
+	background: url(./img/around.png);
+    position: absolute;
+    width:770px;
+    height:108px;
+    left:-5px;
+    top: 110px;
+    animation: flash 1s infinite ease-in-out alternate;
+}
+
+@keyframes flash {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0.1;
+    }
+}
+
+@keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+#main-module{
+	display: none;
+}
+
+#heroCanvas {
+    position: absolute;
+    left: -340px;
+    top: 50px;
+}
+
+#navigator {
+    position: fixed;
+    left: 0;
+    top: 30px;
+    z-index: 9999;
+}
+
+#globalbar {
+    background: url(./img/global.png);
+    margin-bottom: 20px;
+    width: 87px;
+    height: 34px;
+}
+
+#globalbar:hover {
+    background: url(./img/global.png);
+}
+
+#bargraph {
+    background: url(./img/barchart0.png);
+    margin-bottom: 20px;
+    width: 87px;
+    height: 34px;
+}
+
+#bargraph:hover {
+    background: url(./img/barchart.png);
+}
+
+#stream {
+    background: url(./img/stream0.png);
+    margin-bottom: 20px;
+    width: 87px;
+    height: 34px;
+}
+
+#stream:hover {
+    background: url(./img/stream.png);
+}
+
+#stream:active {
+    background: url(./img/stream.png);
+}
+
+
+#global-icon{
+	position: fixed;
+	z-index: 999;
+	top:170px;
+	left:800px;
+	height:450px;
+	width:525px;
+}
+
+#head1{
+	background: url(./img/head1.png);
+	position: fixed;
+	left:800px;
+	top:60px;
+	width: 447px;
+	height: 133px;
+}
+
+
+#superman{
+	background: url(./img/superman1.png);
+	width: 102px;
+	height: 168px;
+	position: absolute;
+	z-index:666;
+	bottom:220px;
+	right:405px;
+}
+
+#superman:hover{
+	background: url(./img/superman2.png);
+}
+
+#spiderman{
+	background: url(./img/spiderman1.png);
+	width: 102px;
+	height: 176px;
+	position: absolute;
+	z-index:666;
+	bottom:220px;
+	right:270px;
+}
+
+#spiderman:hover{
+	background: url(./img/spiderman2.png);
+}
+
+#blackwidow{
+	background: url(./img/blackwidow1.png);
+	width: 102px;
+	height: 179px;
+	position: absolute;
+	z-index:666;
+	bottom:220px;
+	right:135px;
+}
+
+#blackwidow:hover{
+	background: url(./img/blackwidow2.png);
+}
+
+#captainamerica{
+	background: url(./img/captainamerica1.png);
+	width: 102px;
+	height: 176px;
+	position: absolute;
+	z-index:666;
+	bottom:220px;
+	right:0px;
+}
+
+#captainamerica:hover{
+	background: url(./img/captainamerica2.png);
+}
+
+#batman{
+	background: url(./img/batman1.png);
+	width: 102px;
+	height: 186px;
+	position: absolute;
+	z-index:666;
+	bottom:0px;
+	right:405px;
+}
+
+#batman:hover{
+	background: url(./img/batman2.png);
+}
+
+#wonderwoman{
+	background: url(./img/wonderwoman1.png);
+	width: 102px;
+	height: 183px;
+	position: absolute;
+	z-index:666;
+	bottom:0px;
+	right:270px;
+}
+
+#wonderwoman:hover{
+	background: url(./img/wonderwoman2.png);
+}
+
+#thor{
+	background: url(./img/thor1.png);
+	width: 102px;
+	height: 190px;
+	position: absolute;
+	z-index:666;
+	bottom:0px;
+	right:135px;
+}
+
+#thor:hover{
+	background: url(./img/thor2.png);
+}
+
+#ironman{
+	background: url(./img/ironman1.png);
+	width: 102px;
+	height: 183px;
+	position: absolute;
+	z-index:666;
+	bottom:0px;
+	right:0px;
+}
+
+#ironman:hover{
+	background: url(./img/ironman2.png);
+}
+
+.global-group{
+	position: relative;
+	margin-right:20px;
+}
+
+/****************Stream*****************/
+#stream-aside{
+	float: right;
+	right: 0;
+	height: 100%;
+	width: 362px;
+}
+
+#stream-head{
+	background: url(./img/head3.png);
+	margin-top:60px;
+	width:268px;
+	height:80px;
+}
+
+#stream-icon{
+	margin-top: 20px;
+}
+
+#stream-icon div{
+	margin: 10px;
+	width:106px;
+	height:106px;
+	float:left;
+	position: relative;
+}
+
+#super3{
+	background: url(./img/super3-0.png);
+}
+
+#spider3{
+	background: url(./img/spider3-0.png);
+}
+
+#black3{
+	background: url(./img/black3-0.png);
+}
+
+#captain3{
+	background: url(./img/captain3-0.png);
+}
+
+#bat3{
+	background: url(./img/bat3-0.png);
+}
+
+#wonder3{
+	background: url(./img/wonder3-0.png);
+}
+
+#thor3{
+	background: url(./img/thor3-0.png);
+}
+
+#iron3{
+	background: url(./img/iron3-0.png);
+}
+
+.tweets li{
+	padding:3px;
+	background-color: #262b41;
+	color: #bbb8c4;
+	font-family: calibri;
+	margin-left:20px;
+	list-style: none;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+
+li img{
+  margin-right:20px;
+  float:left;
+  position: absolute;
+  left:-40px;
+ }
+
+.dot{
+	width: 15px;
+	height: 15px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#stream-main{
+	width: 570px;
+	margin-left:150px;
+	margin-top:30px;
+	position: relative;
+}
+
+#stream-module,
+#bargraph-module{
+	display: none;
+}
+
+#line{
+	width:3px;
+	background-color:#262b41;
+	height:700px;
+	position: fixed;
+	left:138px;
+}
+
+#barbg{
+	background: url(./img/barbg.png);
+	position: fixed;
+	left:130px;
+	bottom:20px;
+	height:575px;
+	width:1166px;
+}
+
+#hero1{
+	position: absolute;
+	left:262px;
+	bottom: 90px;
+	height:1px;
+	background-color:#379ed5;
+	width:30px;
+}
+
+#hero2{
+	position: absolute;
+	left:395px;
+	bottom: 90px;
+	height:1px;
+	background-color:#c04058;
+	width:30px;
+}
+
+#hero3{
+	position: absolute;
+	left:530px;
+	bottom: 90px;
+	height:1px;
+	background-color:#030000;
+	width:30px;
+}
+
+#hero4{
+	position: absolute;
+	left:660px;
+	bottom: 90px;
+	height:1px;
+	background-color:#086b90;
+	width:30px;
+}
+
+#hero5{
+	position: absolute;
+	left:790px;
+	bottom: 90px;
+	height:1px;
+	background-color:#484a4e;
+	width:30px;
+}
+
+#hero6{
+	position: absolute;
+	left:920px;
+	bottom: 90px;
+	height:1px;
+	background-color:#ecb776;
+	width:30px;
+}
+
+#hero7{
+	position: absolute;
+	left:1054px;
+	bottom: 90px;
+	height:1px;
+	background-color:#888a92;
+	width:30px;
+}
+
+#hero8{
+	position: absolute;
+	left:1186px;
+	bottom: 90px;
+	height:1px;
+	background-color:#e09225;
+	width:30px;
+}
+
+#head2{
+	background: url(./img/head2.png);
+	width:268px;
+    height:80px;
+    position: fixed;
+    right:80px;
+    top:50px;
+}
+
+#heroT1{
+	background: url(./img/superman.png);
+	width:84px;
+	height:77px;
+	position: absolute;
+	left:235px;
+	bottom:52px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT2{
+	background: url(./img/spiderman.png);
+	width:80px;
+	height:86px;
+	position: absolute;
+	left:370px;
+	bottom:47px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT3{
+	background: url(./img/blackwidow.png);
+	width:94px;
+	height:78px;
+	position: absolute;
+	left:498px;
+	bottom:52px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT4{
+	background: url(./img/captainamerica.png);
+	width:84px;
+	height:85px;
+	position: absolute;
+	left:633px;
+	bottom:48px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT5{
+	background: url(./img/batman.png);
+	width:89px;
+	height:80px;
+	position: absolute;
+	left:761px;
+	bottom:50px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT6{
+	background: url(./img/wonderwoman.png);
+	width:80px;
+	height:76px;
+	position: absolute;
+	left:885px;
+	bottom:52px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT7{
+	background: url(./img/thron.png);
+	width:79px;
+	height:91px;
+	position: absolute;
+	left:1029px;
+	bottom:45px;
+	z-index:9999;
+	display: none;
+}
+
+#heroT8{
+	background: url(./img/ironman.png);
+	width:62px;
+	height:82px;
+	position: absolute;
+	left:1170px;
+	bottom:49px;
+	z-index:9999;
+	display: none;
+}

@@ -1,6 +1,10 @@
 var Twit = require('twit');
 
-var app = require('express')(); //express object
+var express = require('express');
+var app = express();
+
+app.use('/static', express.static(__dirname + '/static'));
+
 var http = require('http').Server(app); //serve the express
 
 var io = require('socket.io')(http); //io is input and output
@@ -16,27 +20,27 @@ var T = new Twit({
     access_token_secret: 'HNGbQLqnjjjqi7V51ZTHXFQpoDtT5h2GNFqkvKaUzFQq9'
 });
 
-var getCoord = function(locationName, callback){
+var getCoord = function(locationName, callback) {
     var https = require('https');
     locationName = encodeURIComponent(locationName);
     var key = 'AIzaSyB0fra7B-r4Eaf1znubMEe_-wr93QZzNno';
-    var url = 'https://maps.googleapis.com/maps/api/geocode/json?address='+locationName+'&key='+key;
-    https.get(url, function(response){
+    var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + locationName + '&key=' + key;
+    https.get(url, function(response) {
         var dataString = '';
 
         response.setEncoding('utf-8');
-        response.on('data', function (chunk) {   
+        response.on('data', function(chunk) {
             dataString += chunk;
         });
 
-        response.on('end', function () {
+        response.on('end', function() {
             var data = JSON.parse(dataString);
             if (data.results[0]) {
                 var location = data.results[0].geometry.location;
                 callback(location);
             };
         });
-    });    
+    });
 }
 
 var count = 0;
@@ -44,8 +48,10 @@ var data = [];
 var lastTime = Date.now();
 var nowTime;
 var outputPoint;
+var pointLat;
+var pointLng;
 
-var stream = T.stream('statuses/filter', { track: ['#Iron Man', '#Ironman', 'Iron Man', 'Ironman', 'iron man'] });
+var stream = T.stream('statuses/filter', { track: ['#Iron Man', '#Ironman', '#IronMan', 'Iron Man', 'IronMan', 'Iron man', 'iron man', 'Ironman','#Captain America', '#ICaptainAmerica', 'captainamerica', 'Captain America', 'CaptainAmerica', 'captain america', 'captainamerica','#Super Man', '#Superman', '#SuperMan', 'Super Man', 'SuperMan', 'Superman', 'Super man', 'super man','#Spider Man', '#Spiderman', '#SpiderMan', 'Spider Man', 'SpiderMan', 'Spiderman', 'Spider man', 'spider man','#Black Widow', '#Black Widow', '#Blackwidow', 'Black Widow', 'BlackWidow', 'Black widow', 'Blackwidow', 'black widow','#Wonder Woman', '#Wonder woman', '#WonderWoman', 'Wonder Woman', 'WonderWoman', 'Wonder woman', 'Wonderwoman', 'wonder woman','#Bat Man', '#Batman', '#BatMan', 'Bat Man', 'BatMan', 'Batman', 'Bat man', 'bat man','#Thor', '#thor', '#THOR', 'Thor', 'thor', 'THOR'] });
 
 stream.on('tweet', function(tweet) {
     count++;
@@ -57,28 +63,37 @@ stream.on('tweet', function(tweet) {
     if (tweet.coordinates) {
         if (tweet.coordinates !== null) {
             outputPoint = { "lat": tweet.coordinates.coordinates[0], "lng": tweet.coordinates.coordinates[1] };
-            console.log(outputPoint);
+            pointLat = tweet.coordinates.coordinates[0];
+            pointLng = tweet.coordinates.coordinates[1];
+            io.sockets.volatile.emit('tweet', {
+                user: tweet.user.screen_name,
+                text: tweet.text,
+                pointLat: pointLat,
+                pointLng: pointLng,
+                sum: count,
+            });
         }
     } else if (tweet.user.location) {
-        getCoord(tweet.user.location, function(coord){
-            console.log(JSON.stringify(coord));
-            outputPoint = JSON.stringify(coord);
+        getCoord(tweet.user.location, function(coord) {
+            pointLat = coord.lat;
+            pointLng = coord.lng;
+            io.sockets.volatile.emit('tweet', {
+                user: tweet.user.screen_name,
+                text: tweet.text,
+                pointLat: pointLat,
+                pointLng: pointLng,
+                sum: count,
+            });
         });
     }
-    io.sockets.volatile.emit('tweet', {
-        user: tweet.user.screen_name,
-        text: tweet.text,
-        lal: outputPoint,
-        sum: count,
-    });
 });
 
 /*
 stream.on('tweet', function(tweet){
-		io.sockets.volatile.emit('tweet',{
-		user:tweet.user.screen_name,
-		text:tweet.text,
-	  });
+        io.sockets.volatile.emit('tweet',{
+        user:tweet.user.screen_name,
+        text:tweet.text,
+      });
 });
 
 */

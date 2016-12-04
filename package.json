@@ -13,5 +13,13 @@
     "twit": "^2.2.5"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LyricLiu/SuperHero.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LyricLiu/SuperHero/issues"
+  },
+  "homepage": "https://github.com/LyricLiu/SuperHero#readme",
   "description": ""
 }
